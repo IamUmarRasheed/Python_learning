@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Adoption Application Form</title>
+</head>
+<body>
+<form action="adoptionApplication.php" method="post">
+  <table style="background-color: wheat; width: 50%; margin: 0;">
+    <tr>
+      <td>Name:</td>
+      <td><input style="width: 100%;" type="text" name="name" required></td>
+    </tr>
+    <tr>
+      <td>Email:</td>
+      <td><input style="width: 100%;" type="email" name="email" required></td>
+    </tr>
+    <tr>
+      <td>Phone:</td>
+      <td><input style="width: 100%;" type="tel" name="phone" required></td>
+    </tr>
+    <tr>
+      <td>Address:</td>
+      <td><textarea name="address" rows="5" cols="30" required></textarea></td>
+    </tr>
+    <tr>
+      <td>Preferred Pet(s):</td>
+      <td><textarea name="preferredPets" rows="5" cols="30" required></textarea></td>
+    </tr>
+    <tr>
+      <td>Preferred Pet Species:</td>
+      <td>
+        <select name="preferredPetSpecies" required>
+          <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+          <option value="rabbit">Rabbit</option>
+          <option value="other">Other</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Preferred Pet Size:</td>
+      <td>
+        <input type="radio" name="preferredPetSize" value="small" id="small"> Small<br>
+        <input type="radio" name="preferredPetSize" value="medium" id="medium"> Medium<br>
+        <input type="radio" name="preferredPetSize" value="large" id="large"> Large
+      </td>
+    </tr>
+  </table>
+  <input type="submit" value="Submit">
+  <input type="reset" value="Reset">
+  <p>Contact us at <a href="mailto:pawsandtails@example.com">pawsandtails@example.com</a></p>
+</form>
+</body>
+</html>
