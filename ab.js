@@ -153,6 +153,7 @@
 //   let longstring = "";
 //   for (let i = 0; i < arr.length; i++) {
 //     const currentstr = arr.slice(i, i + n).join(" ");
+//     console.log(currentstr,'kkk')
 //     if (currentstr.length > longstring.length) {
 //       longstring = currentstr;
 //     }
@@ -214,63 +215,171 @@
 
 // console.log(sort);
 ///for first misiing integer
-function cyclemisno(arr) {
-  let i = 0;
-  while (i < arr.length) {
-    let current = arr[i];
-    if (current > 0 && current <= arr.length && arr[i] !== arr[current - 1]) {
-      swape(arr, i, current - 1);
-    } else {
-      i++;
-    }
-  }
-  for (let index = 0; index < arr.length; index++) {
-    if (arr[index] !== index + 1) {
-      return index + 1;
-    }
-  }
-  return arr.length + 1;
-}
+// function cyclemisno(arr) {
+//   let i = 0;
+//   while (i < arr.length) {
+//     let center = arr[i]-1;
+//     if (center > 0 && center <= arr.length && arr[i] !== arr[center]) {
+//       swape(arr, i, center);
+//     } else {
+//       i++;
+//     }
+//   }
+//   for (let index = 0; index < arr.length; index++) {
+//     if (arr[index] !== index + 1) {
+//       return index + 1;
+//     }
+//   }
+//   return arr.length + 1;
+// }
 
-function swape(arr, first, second) {
-  let temp = arr[first];
-  arr[first] = arr[second];
-  arr[second] = temp;
-}
+// function swape(arr, first, second) {
+//   let temp = arr[first];
+//   arr[first] = arr[second];
+//   arr[second] = temp;
+// } 
 
-let are = [1, 2, 5];
-console.log(cyclemisno(are));
+// let are = [1,2,3,5];
+// console.log(cyclemisno(are));
 
 
 
-/// for missing all number 
-function findAllMissingNumbers(arr) {
-  let i = 0;
-  const missingNumbers = [];
+// function findAllMissingNumbers(arr) {
+//   let i = 0;
+//   const missingNumbers = [];
 
-  while (i < arr.length) {
-    let current = arr[i];
-    if (current > 0 && current <= arr.length && arr[i] !== arr[current - 1]) {
-      swape(arr, i, current - 1);
-    } else {
-      i++;
-    }
-  }
+//   while (i < arr.length) {
+//     let current = arr[i] - 1;
+//     if (current >= 0 && current < arr.length && arr[i] !== arr[current]) {
+//       swape(arr, i, current);
+//     } else {
+//       i++;
+//     }
+//   }
 
-  for (let index = 0; index < arr.length; index++) {
-    if (arr[index] !== index + 1) {
-      missingNumbers.push(index + 1);
-    }
-  }
+//   for (let index = 0; index < arr.length; index++) {
+//     if (arr[index] !== index + 1) {
+//       missingNumbers.push(index + 1);
+//       // If you want to handle multiple missing numbers in a single swap, you can increment 'i' here
+//       i++;
+//     }
+//   }
 
-  return missingNumbers;
-}
+//   return missingNumbers;
+// }
 
-function swape(arr, first, second) {
-  let temp = arr[first];
-  arr[first] = arr[second];
-  arr[second] = temp;
-}
+// function swape(arr, first, second) {
+//   let temp = arr[first];
+//   arr[first] = arr[second];
+//   arr[second] = temp;
+// }
 
-let areu = [1, 2, 5];
-console.log(findAllMissingNumbers(areu));
+// let areu = [1, 2, 3, 5];
+// console.log(findAllMissingNumbers(areu));
+
+
+
+// function findMax(arr) {
+//   if (arr.length === 0) {
+//     // Handle the case when the array is empty
+//     return undefined;
+//   }
+
+//   let max = arr[0]; // Assume the first element is the maximum
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] > max) {
+//       // Update max if the current element is greater
+//       max = arr[i];
+//     }
+//   }
+
+//   return max;
+// }
+
+// // Example usage:
+// let myArray = [7, 3, 9, 5, 2, 8];
+// let maxValue = findMax(myArray);
+// console.log("Maximum value:", maxValue);
+
+
+
+// function selectionsort(arr) {
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     let last = arr.length - i - 1;
+//     let maxIndex = getmax(arr, 0, last);
+//     swap(arr, maxIndex, last);
+//   }
+// }
+
+// function getmax(arr, start, last) {
+//   let max = start;
+//   for (let i = start; i <= last; i++) {
+//     if (arr[i] > arr[max]) {
+//       max = i;
+//     }
+//   }
+//   return max;
+// }
+
+// function swap(arr, first, second) {
+//   let temp = arr[first];
+//   arr[first] = arr[second];
+//   arr[second] = temp;
+// }
+
+// let arr = [7, 3, 9, 5, 2, 8];
+// selectionsort(arr);
+// console.log(arr);
+
+
+
+
+// function reverseWords(s) {
+//       let newStrArray = s.split(/\s+/);
+//       let newstr=''
+//       console.log(newStrArray)
+//     for (let i=newStrArray.length-1;i>=0;i--){
+//         if (newStrArray[i]!=''){
+//           newstr+=newStrArray[i]+ " "
+//         }
+//     }
+//     return newstr
+// };
+// console.log(reverseWords("a good   example"));
+
+
+// function productExceptSelf(nums){
+//   const n = nums.length;
+
+//   // Initialize resultArray with products to the left of each index
+//   const resultArray= Array(n).fill(1);
+//   console.log('myfillmethod ',resultArray)
+
+//   let product = 1;
+
+//   // Calculate products to the left
+//   for (let i = 0; i < n; i++) {
+//     resultArray[i] *= product;
+//     product *= nums[i];
+//     console.log(resultArray,'res')
+//     console.log(product,'po');
+//   }
+
+//   product = 1;
+
+//   // Calculate products to the right and update resultArray
+//   for (let i = n - 1; i >= 0; i--) {
+//     resultArray[i] *= product;
+//     product *= nums[i];
+//      console.log(resultArray, "res2");
+//      console.log(product, "po2");
+//   }
+
+//   return resultArray;
+// }
+
+// // Example usage:
+// const nums = [1,2,3,4];
+// const result = productExceptSelf(nums);
+// console.log(result);
